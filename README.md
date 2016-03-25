@@ -11,7 +11,7 @@ you're competing with, per year, per region.
 
 #### User
 - `username` (string)
-- `password_digest` (string)
+- `password_digest` (string, optional)
 
 #### TeamSettings (a Settings table with keyword and value columns)
 - `team_number` (int)

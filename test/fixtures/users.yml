@@ -1,1 +1,5 @@
-# blank
+admin:
+  username: "admin"
+  password_digest: <%= User.digest('foobar') %>
+other:
+  username: "other"
