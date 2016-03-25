@@ -12,11 +12,13 @@ you're competing with, per year, per region.
 #### User
 - `username` (string)
 - `password_digest` (string, optional)
+- Users can be created with or without passwords, but only users with passwords
+are allowed to make changes to **TeamSettings**. Users without passwords can
+login with a session for submitting **Scoring Entries**
 
 #### TeamSettings (a Settings table with keyword and value columns)
 - `team_number` (int)
 - `team_name` (string)
-- `team_password_digest` (string)
 
 #### Game
 - Has a `name`
@@ -35,6 +37,7 @@ input types (text, int, range, etc)
   of the teams that will be at the competition for that region)
 
 #### Scoring Entry
+- belongs to a `user`
 - belongs to a `game` (should be set for the user)
 - has a `team_scored` (a text field with the team number, choose from teams
   competing in this competition region)
