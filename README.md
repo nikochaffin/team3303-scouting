@@ -21,17 +21,17 @@ you're competing with, per year, per region.
     - Should have many options for the *scoring fields*, possibly with different
     input types (text, int, range, etc)
 - **Scoring Field**
-  - *field name*
-  - *field description* (optional)
-  - *field type* (text, int, range)
+    - *field name*
+    - *field description* (optional)
+    - *field type* (text, int, range)
 - **Competition Region**
-  - Should have many *games* (relation to indicate)
-  - Should have a list of *team numbers* (a text field storing serialized array
-    of the teams that will be at the competition for that region)
+    - Should have many *games* (relation to indicate)
+    - Should have a list of *team numbers* (a text field storing serialized array
+      of the teams that will be at the competition for that region)
 - **Scoring Entry**
-  - belongs to a *game* (should be set for the user)
-  - has a *team* (a text field with the team number)
-  - *properties* (this is a *text* column for storing a serialized hash based on
-    the values filled out in the form, since the properties will be dynamic and
-    based on which game is active)
-  - can have *notes* (optional)
+    - belongs to a *game* (should be set for the user)
+    - has a *team* (a text field with the team number)
+    - *properties* (this is a *text* column for storing a serialized hash based on
+      the values filled out in the form, since the properties will be dynamic and
+      based on which game is active)
+    - can have *notes* (optional)
