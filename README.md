@@ -12,17 +12,15 @@ you're competing with, per year, per region.
 #### User
 - `username` (string)
 - `password_digest` (string)
-- `is_admin` (boolean)
 
 #### TeamSettings (a Settings table with keyword and value columns)
 - `team_number` (int)
 - `team_name` (string)
 - `team_password_digest` (string)
-- `current_game` (selected from **Game** instances)
 
 #### Game
 - Has a `name`
-- Changes each `year`
+- Changes each `year` (int)
 - Should have many options for the `scoring_fields`, possibly with different
 input types (text, int, range, etc)
 
