@@ -49,12 +49,4 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:username, :password, :password_confirmation)
     end
-
-    def correct_user_or_admin_user
-      current_user?(User.find_by(params[:id])) || current_user.has_password?
-    end
-
-    def admin_user
-      current_user.has_password?
-    end
 end
