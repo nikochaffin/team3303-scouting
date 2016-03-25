@@ -1,0 +1,17 @@
+<h1>Games index</h1>
+<% @games.each do |game| %>
+  <h3><%= game.name %> <small><%= game.year %> <%= link_to "[edit]", edit_game_path(game) %></small></h3>
+
+  <% if !game.fields.empty? %>
+    <label>Fields:</label>
+    <ul>
+      <% game.fields.each do |field| %>
+        <li><%= field.name %> (<%= field.field_type %>)</li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if game.created_at != @games.last.created_at %>
+    <hr>
+  <% end %>
+<% end %>

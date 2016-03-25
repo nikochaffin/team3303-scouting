@@ -1,0 +1,9 @@
+<fieldset>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <br>
+
+  <%= f.label :field_type %>
+  <%= f.select :field_type, ScoringField::SCORING_FIELD_TYPES  %>
+</fieldset>

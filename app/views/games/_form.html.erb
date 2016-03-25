@@ -1,0 +1,19 @@
+<%= form_for(@game) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <br>
+
+  <%= f.label :year %>
+  <%= f.number_field :year %>
+
+  <% if !@game.fields.empty? %>
+    <label>Fields</label>
+
+    <%= f.fields_for :fields do |builder| %>
+      <%= render 'field_fields', f: builder %>
+    <% end %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
