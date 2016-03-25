@@ -1,6 +1,11 @@
 <h1>Users Index</h1>
 <% @users.each do |user| %>
   <ul>
-    <li><%= user.username %>
+    <li>
+      <%= user.username %>
+      <% if !current_user?(user) %>
+        | <%= link_to "[delete]", user, method: "delete", data: { confirm: "Are you sure you want to delete #{user.username}?" } %>
+      <% end %>
+    </li>
   </ul>
 <% end %>
