@@ -10,16 +10,16 @@ you're competing with, per year, per region.
 ### Models
 
 - **Team**
-  - *team number*
-  - *team name*
-  - *team password* (optional?)
-  - *admin password*
-  - *current game* (selected from **Game** instances)
+    - *team number*
+    - *team name*
+    - *team password* (optional?)
+    - *admin password*
+    - *current game* (selected from **Game** instances)
 - **Game**
-  - Has a *name*
-  - Changes each *year*
-  - Should have many options for the *scoring fields*, possibly with different
-  input types (text, int, range, etc)
+    - Has a *name*
+    - Changes each *year*
+    - Should have many options for the *scoring fields*, possibly with different
+    input types (text, int, range, etc)
 - **Scoring Field**
   - *field name*
   - *field description* (optional)
