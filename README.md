@@ -9,11 +9,15 @@ you're competing with, per year, per region.
 
 ### Models
 
-#### Team
+#### User
+- `username` (string)
+- `password_digest` (string)
+- `is_admin` (boolean)
+
+#### TeamSettings (a Settings table with keyword and value columns)
 - `team_number` (int)
 - `team_name` (string)
 - `team_password_digest` (string)
-- `admin_password_digest` (string)
 - `current_game` (selected from **Game** instances)
 
 #### Game
@@ -34,7 +38,8 @@ input types (text, int, range, etc)
 
 #### Scoring Entry
 - belongs to a `game` (should be set for the user)
-- has a `team` (a text field with the team number)
+- has a `team_scored` (a text field with the team number, choose from teams
+  competing in this competition region)
 - `properties` (this is a `text` column for storing a serialized hash based on
   the values filled out in the form, since the properties will be dynamic and
   based on which game is active)
