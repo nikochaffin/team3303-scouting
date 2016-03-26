@@ -5,7 +5,7 @@ class ChangeRangeMinFormatInScoringField < ActiveRecord::Migration
   end
 
   def down
-    change_column :scoring_fields, :range_min, :number
-    change_column :scoring_fields, :range_max, :number
+    change_column :scoring_fields, :range_min, :integer
+    change_column :scoring_fields, :range_max, :integer
   end
 end
