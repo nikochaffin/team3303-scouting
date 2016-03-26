@@ -1,6 +1,7 @@
 class ScoringField < ActiveRecord::Base
   belongs_to :game, foreign_key: "game_id"
   serialize :options, Array
+  validates :name, presence: true, length: { minimum: 3 }
 
   def options_list
     options.join(", ")
