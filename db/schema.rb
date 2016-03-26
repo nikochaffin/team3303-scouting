@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325204443) do
+ActiveRecord::Schema.define(version: 20160325225257) do
 
   create_table "games", force: :cascade do |t|
     t.string   "name"
@@ -24,8 +24,11 @@ ActiveRecord::Schema.define(version: 20160325204443) do
     t.string   "name"
     t.string   "field_type"
     t.integer  "game_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.text     "options",    default: "--- []\n"
+    t.integer  "range_min"
+    t.integer  "range_max"
   end
 
   create_table "users", force: :cascade do |t|

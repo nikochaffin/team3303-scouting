@@ -8,6 +8,7 @@
   <%= f.number_field :year %>
 
   <% if !@game.fields.empty? %>
+    <hr>
     <label>Fields</label>
 
     <%= f.fields_for :fields do |builder| %>

@@ -6,7 +6,17 @@
     <label>Fields:</label>
     <ul>
       <% game.fields.each do |field| %>
-        <li><%= field.name %> (<%= field.field_type %>)</li>
+        <li>
+          <%= field.name %> (<%= field.field_type %>)
+          <% if field.field_type == 'range' %>
+            [<%= field.range_min %> - <%= field.range_max %>]
+          <% end %>
+          <% if !field.options.empty? %>
+            <br>
+            <label>options: </label>
+            <%= field.options.join(", ") %>
+          <% end %>
+        </li>
       <% end %>
     </ul>
   <% end %>

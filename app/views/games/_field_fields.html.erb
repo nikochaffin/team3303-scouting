@@ -6,4 +6,14 @@
 
   <%= f.label :field_type %>
   <%= f.select :field_type, ScoringField::SCORING_FIELD_TYPES  %>
+
+  <br>
+
+  <label>Range min and max</label><br>
+  <%= f.number_field :range_min %> to <%= f.number_field :range_max %>
+
+  <br>
+
+  <%= f.label :options_list %>
+  <%= f.text_field :options_list %>
 </fieldset>
