@@ -1,4 +1,4 @@
-$(document).ready ()->
+$(document).on 'page:load', ()->
   $('form').on 'click', '.remove_field', (e) ->
     $(this).prev('input[type=hidden]').val '1'
     $(this).closest('fieldset').hide()

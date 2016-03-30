@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
                        uniqueness: { case_sensitive: true }
   has_secure_password validations: false
   validates :password, length: { minimum: 6 }, if: "!password.nil? || !password == ''"
+  has_many :entries, class_name: "ScoringEntry", foreign_key: "user_id"
 
   # Returns the hash digest of the given string
   def User.digest(string)
