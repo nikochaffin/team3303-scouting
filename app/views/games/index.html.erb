@@ -19,6 +19,7 @@
           <% if field.field_type == 'range' %>
             [<%= field.range_min %> - <%= field.range_max %>]
           <% end %>
+
           <% if !field.options.empty? %>
             <br>
             <label>options: </label>
