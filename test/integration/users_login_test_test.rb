@@ -27,7 +27,7 @@ class UsersLoginTestTest < ActionDispatch::IntegrationTest
   test "login with password" do
     get login_path
     assert_template 'sessions/new'
-    post login_path, session: { username: @admin.username, password: "foobar" }
+    post login_path, session: { username: @admin.username, password: "password" }
     assert_redirected_to root_url
     delete logout_path
     assert_redirected_to root_url

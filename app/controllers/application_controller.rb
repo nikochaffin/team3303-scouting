@@ -20,13 +20,14 @@ class ApplicationController < ActionController::Base
     end
 
     def correct_user_or_admin_user
-      unless current_user?(User.find_by(params[:id])) || current_user.has_password?
+      unless current_user?(User.find_by(params[:id])) || current_user.admin?
         redirect_to_login
       end
     end
 
     def admin_user
-      unless current_user && current_user.has_password?
+      unless current_user && current_user.admin?
+        log_out
         redirect_to_login
       end
     end

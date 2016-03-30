@@ -8,7 +8,7 @@ class ScoringField < ActiveRecord::Base
   end
 
   def options_list=(input)
-    self.options = input.gsub(", ", ",").split(",")
+    self.options = input.squeeze(" ").strip.gsub(", ", ",").split(",")
   end
 
   SCORING_FIELD_TYPES = ["text", "number", "boolean", "radio_set", "range"]

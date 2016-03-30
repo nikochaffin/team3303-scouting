@@ -35,6 +35,17 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  test "has_password returns false if password_digest is nil or blank" do
+    new_user = User.create(username: "someuser")
+    new_user.password_digest = nil
+    assert_not new_user.has_password?
+    new_user.password_digest = ''
+    new_user.save
+    new_user.reload
+    assert new_user.password_digest == ''
+    assert_not new_user.has_password?
+  end
+
   test "has_password return true if the user has a password" do
     new_user = User.create(username: "someuser")
     assert_not new_user.has_password?

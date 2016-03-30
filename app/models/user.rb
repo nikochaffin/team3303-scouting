@@ -13,6 +13,11 @@ class User < ActiveRecord::Base
 
   # Returns true if the user has a password assigned to it
   def has_password?
-    !password_digest.nil?
+    !password_digest.nil? && password_digest != ''
+  end
+
+  # Returns true is the user is an admin
+  def admin?
+    has_password?
   end
 end

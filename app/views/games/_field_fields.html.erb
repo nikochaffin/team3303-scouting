@@ -16,4 +16,7 @@
 
   <%= f.label :options_list %>
   <%= f.text_field :options_list %>
+
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "[remove]", "#", class: "remove_field" %>
 </fieldset>

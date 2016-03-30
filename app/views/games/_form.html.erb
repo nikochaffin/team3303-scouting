@@ -15,6 +15,7 @@
       <%= render 'field_fields', f: builder %>
     <% end %>
   <% end %>
+  <%= link_to_add_fields "Add Scoring Field", f, :fields %>
 
   <%= f.submit %>
 <% end %>
