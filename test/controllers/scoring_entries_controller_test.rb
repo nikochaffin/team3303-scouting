@@ -1,34 +1,11 @@
 require 'test_helper'
 
 class ScoringEntriesControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index
-    assert_response :success
+  def setup
+    admin = users(:admin)
+    log_in_as(admin)
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
-  test "should get create" do
-    get :create
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit
-    assert_response :success
-  end
-
-  test "should get update" do
-    get :update
-    assert_response :success
-  end
-
-  test "should get destroy" do
-    get :destroy
-    assert_response :success
-  end
+  # TODO: still need to write controller tests for scoring_entries
 
 end
