@@ -5,7 +5,9 @@
   <%= f.fields_for :properties, OpenStruct.new(@scoring_entry.properties) do |builder| %>
     <% @scoring_entry.game.fields.each do |field| %>
       <fieldset>
-        <%= render "scoring_entries/fields/#{ field.field_type }_field", field: field, f: builder %>
+        <div class="form-field <%= field.field_type %>">
+          <%= render "scoring_entries/fields/#{ field.field_type }_field", field: field, f: builder %>
+        </div>
       </fieldset>
     <% end %>
   <% end %>

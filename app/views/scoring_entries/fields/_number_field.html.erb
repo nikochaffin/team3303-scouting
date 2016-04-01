@@ -1,11 +1,10 @@
-<div class="form-field">
-  <%= f.label field.name %>
-  <div class="input-group">
-    <span class="input-group__btn">
-      <button class="number-decrease" type="button"><i class="material-icons">&#xE15B;</i></button>
-    </span>
-    <%= f.number_field field.name %>
-    <span class="input-group__btn">
-      <button class="number-increase" type="button"><i class="material-icons">&#xE145;</i></button>
-    </span>
+<%= f.label field.name %>
+<div class="input-group">
+  <span class="input-group__btn">
+    <button class="number-decrease" type="button"><i class="material-icons">&#xE15B;</i></button>
+  </span>
+  <%= f.number_field field.name %>
+  <span class="input-group__btn">
+    <button class="number-increase" type="button"><i class="material-icons">&#xE145;</i></button>
+  </span>
 </div>

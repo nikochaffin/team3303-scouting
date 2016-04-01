@@ -1,0 +1,6 @@
+<%= f.label field.name %>
+<% field.options.each do |option| %>
+  <br>
+  <%= f.radio_button field.name, option %>
+  <%= f.label field.name + "_" + option, option %>
+<% end %>

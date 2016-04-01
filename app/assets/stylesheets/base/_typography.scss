@@ -15,3 +15,18 @@ hr {
   border: none;
   border-top: 1px solid #ddd;
 }
+
+table {
+  width: 100%;
+  text-align: left;
+
+  thead {
+    tr {
+      padding-bottom: 5px;
+    }
+  }
+
+  th {
+    border-bottom: 2px solid #555;
+  }
+}

@@ -10,7 +10,10 @@
     </small>
   </h3>
 
+  <p><%= link_to "See Scoring Entries", game_path(game) %></p>
+
   <% if !game.fields.empty? %>
+    <br>
     <label>Fields:</label>
     <ul>
       <% game.fields.each do |field| %>
