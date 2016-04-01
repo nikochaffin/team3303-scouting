@@ -6,7 +6,7 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = Game.find_by(params[:id])
+    @game = Game.find(params[:id])
   end
 
   def new
@@ -24,11 +24,11 @@ class GamesController < ApplicationController
   end
 
   def edit
-    @game = Game.find_by(params[:id])
+    @game = Game.find(params[:id])
   end
 
   def update
-    @game = Game.find_by(params[:id])
+    @game = Game.find(params[:id])
     if @game.update_attributes(game_params)
       flash[:success] = "Game #{ @game.name } updated"
       redirect_to games_url
@@ -38,7 +38,7 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    Game.find_by(params[:id]).destroy
+    Game.find(params[:id]).destroy
     flash[:success] = "Game deleted"
     redirect_to games_url
   end
