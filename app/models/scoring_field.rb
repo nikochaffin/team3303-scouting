@@ -11,5 +11,13 @@ class ScoringField < ActiveRecord::Base
     self.options = input.squeeze(" ").strip.gsub(", ", ",").split(",")
   end
 
+  def set?
+    field_type == 'boolean_set' || field_type == 'radio_set'
+  end
+
+  def range?
+    field_type == 'range'
+  end
+
   SCORING_FIELD_TYPES = ["text", "number", "boolean", "boolean_set", "radio_set", "range"]
 end

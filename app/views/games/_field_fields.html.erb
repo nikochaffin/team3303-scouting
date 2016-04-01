@@ -9,18 +9,18 @@
     <%= f.select :field_type, ScoringField::SCORING_FIELD_TYPES  %>
   </div>
 
-  <div class="form-field">
+  <div class="form-field range-min-max" style="<% if !f.object.range? %>display:none;<% end %>">
     <label>Range min and max</label><br>
     <%= f.number_field :range_min %> to <%= f.number_field :range_max %>
   </div>
 
-  <div class="form-field">
+  <div class="form-field options-list" style="<% if !f.object.set? %>display:none;<% end %>">
     <%= f.label :options_list %>
     <%= f.text_field :options_list %>
   </div>
 
   <div class="form-field">
     <%= f.hidden_field :_destroy %>
-    <%= link_to "[remove]", "#", class: "remove_field" %>
+    <%= link_to "[remove]", "#", data: { confirm: "Are you sure you want to delete this field?" }, class: "remove_field" %>
   </div>
 </fieldset>
