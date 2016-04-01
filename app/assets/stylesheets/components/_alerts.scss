@@ -1,0 +1,12 @@
+.alert {
+  padding: 1em 1.5em;
+  border-radius: $global-border-radius;
+  border: 1px solid #555;
+}
+
+.alert-success {
+  font-weight: bold;
+  border-color: $green;
+  background-color: lighten($green, 40);
+  color: darken($green, 34);
+}

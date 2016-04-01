@@ -11,5 +11,5 @@ class ScoringField < ActiveRecord::Base
     self.options = input.squeeze(" ").strip.gsub(", ", ",").split(",")
   end
 
-  SCORING_FIELD_TYPES = ["text", "number", "boolean", "radio_set", "range"]
+  SCORING_FIELD_TYPES = ["text", "number", "boolean", "boolean_set", "radio_set", "range"]
 end

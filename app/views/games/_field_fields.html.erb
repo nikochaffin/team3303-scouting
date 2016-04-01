@@ -1,22 +1,26 @@
 <fieldset>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <div class="form-field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
 
-  <br>
+  <div class="form-field">
+    <%= f.label :field_type %>
+    <%= f.select :field_type, ScoringField::SCORING_FIELD_TYPES  %>
+  </div>
 
-  <%= f.label :field_type %>
-  <%= f.select :field_type, ScoringField::SCORING_FIELD_TYPES  %>
+  <div class="form-field">
+    <label>Range min and max</label><br>
+    <%= f.number_field :range_min %> to <%= f.number_field :range_max %>
+  </div>
 
-  <br>
+  <div class="form-field">
+    <%= f.label :options_list %>
+    <%= f.text_field :options_list %>
+  </div>
 
-  <label>Range min and max</label><br>
-  <%= f.number_field :range_min %> to <%= f.number_field :range_max %>
-
-  <br>
-
-  <%= f.label :options_list %>
-  <%= f.text_field :options_list %>
-
-  <%= f.hidden_field :_destroy %>
-  <%= link_to "[remove]", "#", class: "remove_field" %>
+  <div class="form-field">
+    <%= f.hidden_field :_destroy %>
+    <%= link_to "[remove]", "#", class: "remove_field" %>
+  </div>
 </fieldset>

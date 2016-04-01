@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+body {
+  font-family: $main-font-family;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+hr {
+  margin: 2em 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}

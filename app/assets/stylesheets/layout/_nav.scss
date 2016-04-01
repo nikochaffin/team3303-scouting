@@ -1,0 +1,35 @@
+#main-nav {
+  @include clearfix();
+  background-color: $nav-bg;
+  line-height: 3;
+  color: $nav-text-color;
+
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .nav-head {
+    float: left;
+  }
+
+  .nav-links {
+    @include clearfix();
+    float: right;
+
+    li {
+      float: left;
+    }
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    padding: 0 1em;
+
+    &:hover {
+      background-color: lighten($nav-bg, 10);
+    }
+  }
+}

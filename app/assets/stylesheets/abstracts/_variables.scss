@@ -1,0 +1,19 @@
+$orange: #db8243;
+$green: #2ed77b;
+$off-white: #f0f0ef;
+
+$global-border-radius: 4px;
+
+$body-bg: darken($off-white, 10);
+$main-bg: $off-white;
+$main-font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+
+$nav-bg: darken(desaturate($orange, 20), 10);
+$nav-text-color: white;
+
+$button-primary-bg: $orange;
+$button-positive-bg: $green;
+
+$input-height: 40px;
+
+$fieldset-bg: lighten($off-white, 4);

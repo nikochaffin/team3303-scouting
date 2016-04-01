@@ -8,28 +8,46 @@
 </head>
 <body>
 
-  <nav>
-    <strong>Scouting App</strong>
-    <% if logged_in? %>
-    | <span><%= current_user.username %>
-    <% end %>
+  <nav id="main-nav">
+    <div class="container">
+      <div class="nav-head">
+        <%= link_to root_path, class: 'nav-head__logo' do %>
+          <strong>Scouting App</strong>
+        <% end %>
+        <% if logged_in? %>
+          <span class="nav-head__user">
+            <i class="material-icons">&#xE7FD;</i>
+            <%= current_user.username %>
+          </span>
+        <% end %>
+      </div>
 
-    <ul class="links">
-      <li><%= link_to "Games", games_path %></li>
-      <% if logged_in? %>
-        <li><%= link_to "Log Out", logout_path %></li>
-      <% else %>
-        <li><%= link_to "Log In", login_path %></li>
-      <% end %>
-    </ul>
+      <ul class="nav-links">
+        <% if logged_in? %>
+          <% if current_user.admin? %>
+            <li><%= link_to "Games", games_path %></li>
+          <% end %>
+          <li><%= link_to "New Scoring Entry", new_scoring_entry_path %></li>
+          <li><%= link_to "Log Out", logout_path %></li>
+        <% else %>
+          <li><%= link_to "Log In", login_path %></li>
+        <% end %>
+      </ul>
+    </div>
   </nav>
 
-  <% flash.each do |message_type, message| %>
-    <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-    <br>
-  <% end %>
+  <div id="main">
+    <div class="container">
 
-<%= yield %>
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+        <br>
+      <% end %>
+
+      <%= yield %>
+
+    </div>
+  </div>
 
 </body>
 </html>

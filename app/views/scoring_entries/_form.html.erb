@@ -1,9 +1,6 @@
 <%= form_for(@scoring_entry) do |f| %>
-  <%= f.label :user_id %>
-  <%= f.number_field :user_id %>
-
-  <%= f.label :game_id %>
-  <%= f.number_field :game_id %>
+  <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :game_id %>
 
   <%= f.fields_for :properties, OpenStruct.new(@scoring_entry.properties) do |builder| %>
     <% @scoring_entry.game.fields.each do |field| %>
