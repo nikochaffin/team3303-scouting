@@ -27,6 +27,12 @@ input {
 
 .form-field {
   margin: 0.5em 0;
+
+  &.number {
+    .input-group {
+      font-size: 2em;
+    }
+  }
 }
 
 .input-group {
@@ -44,16 +50,18 @@ input {
     width: 100%;
     padding-top: 0;
     padding-bottom: 0;
-    line-height: $input-height - 4px;
+    line-height: $input-height;
     height: $input-height;
     vertical-align: middle;
   }
 
   .input-group__btn {
     width: 1%;
+    min-width: 3em;
 
     button {
-      padding: 0 0.5em;
+      width: 100%;
+      padding: 0;
       line-height: inherit;
       vertical-align: inherit;
     }
