@@ -9,7 +9,7 @@ class ScoringEntriesController < ApplicationController
   def new
     @scoring_entry = ScoringEntry.new
     @scoring_entry.user_id = current_user.id
-    @scoring_entry.game_id = Game.all.order(:year).last.id
+    @scoring_entry.game_id = current_game.id
   end
 
   def create

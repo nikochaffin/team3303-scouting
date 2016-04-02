@@ -7,4 +7,8 @@ module ApplicationHelper
     end
     link_to(name, "#", class: "add_field", data: {id: id, fields: fields.gsub("\n", "")})
   end
+
+  def current_game
+    Game.all.order(:year).last
+  end
 end
