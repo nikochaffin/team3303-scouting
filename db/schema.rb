@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160330022041) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "games", force: :cascade do |t|
     t.string   "name"
     t.integer  "year"
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 20160330022041) do
     t.integer  "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "options"
+    t.string   "options",                 array: true
     t.integer  "range_min"
     t.integer  "range_max"
   end
@@ -48,6 +51,6 @@ ActiveRecord::Schema.define(version: 20160330022041) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end

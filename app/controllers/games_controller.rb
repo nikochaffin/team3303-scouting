@@ -49,6 +49,7 @@ class GamesController < ApplicationController
       params.require(:game).permit(:name, :year,
                                    fields_attributes: [:id, :name, :field_type,
                                                        :range_min, :range_max,
-                                                       :_destroy, :options_list])
+                                                       :_destroy, :options_list,
+                                                       :options])
     end
 end
