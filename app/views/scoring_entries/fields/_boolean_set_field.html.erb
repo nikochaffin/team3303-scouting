@@ -1,6 +1,8 @@
 <%= f.label field.name %>
-<% field.options.each do |option| %>
-  <br>
-  <%= f.radio_button field.name, option %>
-  <%= f.label field.name + "_" + option, option %>
+<%= f.fields_for field.name, OpenStruct.new(@scoring_entry.properties[field.name]) do |field_builder| %>
+  <% field.options.each do |option| %>
+    <br>
+    <%= field_builder.check_box option %>
+    <%= field_builder.label option %>
+  <% end %>
 <% end %>
