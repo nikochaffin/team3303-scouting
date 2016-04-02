@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 20160330022041) do
     t.string   "name"
     t.string   "field_type"
     t.integer  "game_id"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.text     "options",    default: "--- []\n"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "options"
     t.integer  "range_min"
     t.integer  "range_max"
   end
