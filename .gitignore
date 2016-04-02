@@ -15,3 +15,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore Ds Store files
+*.DS_Store
