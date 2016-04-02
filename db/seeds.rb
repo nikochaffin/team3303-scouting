@@ -22,7 +22,7 @@ admin_users = [
     username: "admin",
     password: "password",
     password_confirmation: "password"
-  }
+  },
   {
     username: "morgan",
     password: "password",
@@ -50,7 +50,7 @@ usernames.each do |username|
 end
 
 admin_users.each do |user|
-  User.create(username: user.username, password: user.password, password_confirmation: user.password)
+  User.create(username: user[:username], password: user[:password], password_confirmation: user[:password])
 end
 
 Game.create(name: "Stronghold", year: 2016)
