@@ -6,4 +6,51 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(username: "admin", password: "password", password_confirmation: "password")
+usernames = [
+  "jonah",
+  "zeke",
+  "mark",
+  "adrian",
+  "ben",
+  "caleb",
+  "abigail",
+  "adam",
+  "bret",
+]
+admin_users = [
+  {
+    username: "admin",
+    password: "password",
+    password_confirmation: "password"
+  }
+  {
+    username: "morgan",
+    password: "password",
+    password_confirmation: "password"
+  },
+  {
+    username: "mitch",
+    password: "adminpassword",
+    password_confirmation: "adminpassword"
+  },
+  {
+    username: "jameson",
+    password: "password",
+    password_confirmation: "password"
+  },
+  {
+    username: "carlson",
+    password: "password",
+    password_confirmation: "password"
+  }
+]
+
+usernames.each do |username|
+  User.create(username: username, password: "", password_confirmation: "")
+end
+
+admin_users.each do |user|
+  User.create(username: user.username, password: user.password, password_confirmation: user.password)
+end
+
+Game.create(name: "Stronghold", year: 2016)
