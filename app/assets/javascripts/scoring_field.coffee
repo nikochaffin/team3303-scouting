@@ -5,7 +5,7 @@ $(document).on 'page:load ready', ()->
       rangeMinMax = $(this).parent().siblings('.range-min-max')
       optionsList = $(this).parent().siblings('.options-list')
       switch $(this).val()
-        when 'boolean_set', 'radio_set'
+        when 'checkbox_set', 'radio_set'
           rangeMinMax.hide()
           optionsList.show()
         when 'range'

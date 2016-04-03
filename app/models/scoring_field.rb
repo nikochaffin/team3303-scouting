@@ -19,5 +19,5 @@ class ScoringField < ActiveRecord::Base
     field_type == 'range'
   end
 
-  SCORING_FIELD_TYPES = ["text", "number", "boolean", "boolean_set", "radio_set", "range"]
+  SCORING_FIELD_TYPES = ["text", "number", "checkbox", "checkbox_set", "radio_set", "range"]
 end

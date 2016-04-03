@@ -14,8 +14,6 @@
     <%= f.number_field :range_min %> to <%= f.number_field :range_max %>
   </div>
 
-  <%= f.object.options_list %>
-
   <div class="form-field options-list" style="<% if !f.object.set? %>display:none;<% end %>">
     <%= f.label :options_list %>
     <%= f.text_field :options_list %>

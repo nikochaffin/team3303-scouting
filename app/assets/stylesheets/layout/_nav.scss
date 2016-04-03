@@ -1,35 +1,88 @@
 #main-nav {
   @include clearfix();
   background-color: $nav-bg;
-  line-height: 3;
+  line-height: 3em;
   color: $nav-text-color;
 
   .container {
+    position: relative;
     padding-left: 0;
     padding-right: 0;
   }
 
-  .nav-head {
-    float: left;
-  }
-
-  .nav-links {
-    @include clearfix();
-    float: right;
-
-    li {
-      float: left;
-    }
-  }
-
   a {
-    display: inline-block;
     text-decoration: none;
     color: inherit;
     padding: 0 1em;
 
     &:hover {
       background-color: lighten($nav-bg, 10);
+    }
+  }
+}
+
+.nav-head {
+  float: left;
+}
+
+.nav-links {
+  @include clearfix();
+  display: none;
+  position: absolute;
+  top: 3em;
+  left: 0;
+  width: 100%;
+  background-color: $nav-bg;
+  box-shadow: inset 0 0 10px rgba(black, 0.2);
+
+  a {
+    display: block;
+  }
+}
+
+.nav__mobile-toggle {
+  display: inline-block;
+  padding: 0 0.5em;
+  margin-bottom: 0;
+  float: right;
+  cursor: pointer;
+  line-height: inherit;
+}
+
+.nav__mobile-toggle-checkbox {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+
+  &:checked {
+    & + .nav__mobile-toggle {
+      background-color: lighten($nav-bg, 10);
+    }
+
+    & ~ .nav-links {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .nav__mobile-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: block;
+    float: right;
+    position: static;
+    box-shadow: none;
+    width: auto;
+
+    li {
+      float: left;
+    }
+
+    a {
+      display: inline-block;
     }
   }
 }

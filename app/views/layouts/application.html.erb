@@ -23,6 +23,9 @@
         <% end %>
       </div>
 
+      <input class="nav__mobile-toggle-checkbox" type="checkbox" id="mobile-toggle">
+      <label class="nav__mobile-toggle" for="mobile-toggle">Menu <i class="material-icons">&#xE5D2;</i></label>
+
       <ul class="nav-links">
         <% if logged_in? %>
           <% if current_user.admin? %>
