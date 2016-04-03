@@ -11,8 +11,19 @@ class ScoringField < ActiveRecord::Base
     self.options = input.squeeze(" ").strip.gsub(", ", ",").split(",")
   end
 
+  def option_initials
+    options.each do |option|
+      for i in 1..option.length
+        if !options.include? option.slice(0, i)
+          option.slice!(i, option.length)
+          break
+        end
+      end
+    end
+  end
+
   def set?
-    field_type == 'boolean_set' || field_type == 'radio_set'
+    field_type == 'checkbox_set' || field_type == 'radio_set'
   end
 
   def range?

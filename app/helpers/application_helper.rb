@@ -11,4 +11,13 @@ module ApplicationHelper
   def current_game
     Game.all.order(:year).last
   end
+
+  def keys_with(hash, key_to_test)
+    hash.each do |k, v|
+      if v != key_to_test
+        hash.delete(k)
+      end
+    end
+    hash.keys
+  end
 end
