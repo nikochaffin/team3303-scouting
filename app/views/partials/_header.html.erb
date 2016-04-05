@@ -1,0 +1,39 @@
+<nav class="main-nav">
+  <div class="container">
+    <div class="nav-head">
+      <%= link_to root_path, class: 'nav-head__logo' do %>
+        <strong>Scouting App</strong>
+      <% end %>
+      <% if logged_in? %>
+        <span class="nav-head__user">
+          <i class="material-icons">&#xE7FD;</i>
+          <%= current_user.username %>
+        </span>
+      <% end %>
+    </div>
+
+    <input class="nav__mobile-toggle-checkbox" type="checkbox" id="mobile-toggle">
+    <label class="nav__mobile-toggle" for="mobile-toggle">Menu <i class="material-icons">&#xE5D2;</i></label>
+
+    <ul class="nav-links">
+      <% if logged_in? %>
+        <% if current_user.admin? %>
+          <li class="dropdown">
+            <%= link_to "Admin", "#", class: "dropdown-toggle" %>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Games", games_path %></li>
+              <li><%= link_to "Scouting Results", "#" %></li>
+              <li><%= link_to "Cross Tab", "#" %></li>
+              <li><%= link_to "Scoring Entries", "#" %></li>
+            </ul>
+        <% end %>
+        <% if current_game %>
+          <li><%= link_to "New Scoring Entry", new_scoring_entry_path %></li>
+        <% end %>
+        <li><%= link_to "Log Out", logout_path %></li>
+      <% else %>
+        <li><%= link_to "Log In", login_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

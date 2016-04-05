@@ -43,6 +43,12 @@ class GamesController < ApplicationController
     redirect_to games_url
   end
 
+  def entries
+    @game = Game.find(params[:id])
+    @scoring_entries = @game.entries
+    render layout: 'results_table'
+  end
+
   private
 
     def game_params

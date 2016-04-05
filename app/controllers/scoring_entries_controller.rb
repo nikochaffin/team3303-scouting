@@ -46,7 +46,7 @@ class ScoringEntriesController < ApplicationController
   private
 
     def scoring_entry_params
-      params.require(:scoring_entry).permit(:id, :game_id, :user_id, :team_number, :notes).tap do |whitelisted|
+      params.require(:scoring_entry).permit(:id, :game_id, :user_id, :match_number, :team_number, :notes).tap do |whitelisted|
         whitelisted[:properties] = params[:scoring_entry][:properties]
       end
     end

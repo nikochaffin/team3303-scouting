@@ -1,0 +1,25 @@
+<h1>Scoring Entries for <%= @game.name %></h1>
+<table>
+  <thead>
+    <tr>
+      <th>Match Number</th>
+      <th>Team Number</th>
+      <% @game.fields.each do |field| %>
+        <th><%= field.name.humanize %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <% @game.entries.each do |entry| %>
+    <tr>
+      <td><%= entry.match_number %></td>
+      <td><%= entry.team_number %></td>
+      <% @game.fields.each do |field| %>
+        <% if entry.properties[field.name].is_a?(Hash) %>
+          <td><%= keys_with(entry.properties[field.name], "1") %></td>
+        <% else %>
+          <td><%= entry.properties[field.name] %></td>
+        <% end %>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

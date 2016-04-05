@@ -2,6 +2,16 @@
   <%= f.hidden_field :user_id %>
   <%= f.hidden_field :game_id %>
 
+  <div class="form-field half-width">
+    <%= f.label :match_number %>
+    <%= f.number_field :match_number, min: 0, required: true %>
+  </div>
+
+  <div class="form-field half-width">
+    <%= f.label :team_number %>
+    <%= f.number_field :team_number, min: 0, required: true %>
+  </div>
+
   <%= f.fields_for :properties, OpenStruct.new(@scoring_entry.properties) do |builder| %>
     <% @scoring_entry.game.fields.each do |field| %>
       <fieldset>
@@ -12,5 +22,5 @@
     <% end %>
   <% end %>
 
-  <%= f.submit data: { confirm: "Are you 100% done?" }%>
+  <%= f.submit data: { confirm: "Are you 100% done?" } %>
 <% end %>

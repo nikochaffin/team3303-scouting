@@ -14,4 +14,24 @@ body {
   margin: 0 auto;
   max-width: 900px;
   padding: 0 1.6em;
+
+  &-full {
+    max-width: none;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+@media ($mobile-mq) {
+  .half-width {
+    max-width: 50%;
+  }
+
+  .third-width {
+    max-width: 33.33%;
+  }
+
+  .quarter-width {
+    max-width: 25%;
+  }
 }
