@@ -45,7 +45,6 @@ class GamesController < ApplicationController
 
   def entries
     @game = Game.find(params[:id])
-    @scoring_entries = @game.entries
     render layout: 'results_table'
   end
 

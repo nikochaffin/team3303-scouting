@@ -7,6 +7,7 @@
       <% @game.fields.each do |field| %>
         <th><%= field.name.humanize %></th>
       <% end %>
+      <th></th>
     </tr>
   </thead>
   <% @game.entries.each do |entry| %>
@@ -20,6 +21,10 @@
           <td><%= entry.properties[field.name] %></td>
         <% end %>
       <% end %>
+      <td>
+        <%= link_to "[edit]", edit_scoring_entry_path(entry) %> |
+        <%= link_to "[delete]", scoring_entry_path(entry), method: "delete", data: { confirm: "Delete scoring entry?" } %>
+      </td>
     </tr>
   <% end %>
 </table>

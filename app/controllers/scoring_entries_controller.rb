@@ -30,7 +30,11 @@ class ScoringEntriesController < ApplicationController
     @scoring_entry = ScoringEntry.find(params[:id])
     if @scoring_entry.update_attributes(scoring_entry_params)
       flash[:success] = "Scoring entry updated"
-      redirect_to root_path
+      if current_user.admin?
+        redirect_to entries_game_path(@scoring_entry.game)
+      else
+        redirect_to root_path
+      end
     else
       render :edit
     end
@@ -38,9 +42,15 @@ class ScoringEntriesController < ApplicationController
 
   def destroy
     @scoring_entry = ScoringEntry.find(params[:id])
+    game_id = @scoring_entry.game_id
     @scoring_entry.destroy
-    flash[:success] = "Scoring entry destroyed"
-    redirect_to root_path
+    @game = Game.find(game_id)
+    flash[:success] = "Scoring entry deleted"
+    if !@game.entries.empty?
+      redirect_to entries_game_path(@game)
+    else
+      redirect_to game_path(@game)
+    end
   end
 
   private
