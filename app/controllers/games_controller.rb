@@ -45,7 +45,10 @@ class GamesController < ApplicationController
 
   def entries
     @game = Game.find(params[:id])
-    render layout: 'results_table'
+    respond_to do |format|
+      format.html { render layout: 'results_table' }
+      format.csv { send_data @game.entries_to_csv }
+    end
   end
 
   private

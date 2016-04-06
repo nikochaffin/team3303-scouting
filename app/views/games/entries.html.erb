@@ -1,4 +1,7 @@
 <h1>Scoring Entries for <%= @game.name %></h1>
+<p>
+  <%= link_to "Download as CSV file", entries_game_path(@game, format: "csv") %>
+</p>
 <table>
   <thead>
     <tr>

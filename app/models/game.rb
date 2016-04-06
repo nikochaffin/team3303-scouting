@@ -6,4 +6,31 @@ class Game < ActiveRecord::Base
   def entries
     ScoringEntry.where(game_id: self.id).order(created_at: :asc)
   end
+
+  def has_checkbox_set?
+    entries.where(field_type: "checkbox_set").count > 0
+  end
+
+  def field_names
+    fields.map { |field| field.name }
+  end
+
+  def fields_for_csv
+    fields.map do |field|
+      if field.field_type == "checkbox_set"
+        field.options.map { |option| field.name.humanize + " / " + option }
+      else
+        field.name.humanize
+      end
+    end.flatten.unshift "Match Number", "Team Number"
+  end
+
+  def entries_to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << fields_for_csv
+      entries.each do |entry|
+        csv << entry.properties_for_csv
+      end
+    end
+  end
 end
