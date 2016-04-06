@@ -1,28 +1,20 @@
-<h1>Scoring Entries for <%= @game.name %></h1>
+<h1>All Scoring Entries for <%= @game.name %></h1>
 <p>
   <%= link_to "Download as CSV file", entries_game_path(@game, format: "csv") %>
 </p>
 <table>
   <thead>
     <tr>
-      <th>Match Number</th>
-      <th>Team Number</th>
-      <% @game.fields.each do |field| %>
-        <th><%= field.name.humanize %></th>
+      <% @game.fields_for_csv.each do |field_name| %>
+        <th><%= field_name %></th>
       <% end %>
       <th></th>
     </tr>
   </thead>
   <% @game.entries.each do |entry| %>
     <tr>
-      <td><%= entry.match_number %></td>
-      <td><%= entry.team_number %></td>
-      <% @game.fields.each do |field| %>
-        <% if entry.properties[field.name].is_a?(Hash) %>
-          <td><%= keys_with(entry.properties[field.name], "1") %></td>
-        <% else %>
-          <td><%= entry.properties[field.name] %></td>
-        <% end %>
+      <% entry.properties_for_csv.each do |prop| %>
+        <td><%= prop %></td>
       <% end %>
       <td>
         <%= link_to "[edit]", edit_scoring_entry_path(entry) %> |

@@ -7,14 +7,16 @@ class ScoringEntry < ActiveRecord::Base
 
   def properties_for_csv
     game.fields.map do |field|
-      if !properties[field.name].nil?
-        if field.field_type == "checkbox_set"
-          field.options.map do |option|
+      if field.field_type == "checkbox_set"
+        field.options.map do |option|
+          if !properties[field.name].nil?
             if properties[field.name][option] == "1" then "Yes" else "No" end
+          else
+            nil
           end
-        else
-          properties[field.name]
         end
+      else
+        properties[field.name]
       end
     end.flatten.unshift match_number, team_number
   end
