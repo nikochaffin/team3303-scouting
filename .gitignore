@@ -18,3 +18,6 @@
 
 # Ignore Ds Store files
 *.DS_Store
+
+# Ignore local environment variables
+.env
