@@ -3,6 +3,11 @@
   <%= f.hidden_field :game_id %>
 
   <div class="form-field half-width">
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: current_user.username %>
+  </div>
+
+  <div class="form-field half-width">
     <%= f.label :match_number %>
     <%= f.number_field :match_number, min: 0, required: true %>
   </div>

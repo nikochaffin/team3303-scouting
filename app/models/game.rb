@@ -22,7 +22,7 @@ class Game < ActiveRecord::Base
       else
         field.name.humanize
       end
-    end.flatten.unshift "Match Number", "Team Number"
+    end.flatten.unshift "Name", "Match Number", "Team Number"
   end
 
   def entries_to_csv(options = {})

@@ -5,6 +5,10 @@ class ScoringEntry < ActiveRecord::Base
   validates :team_number, presence: true
   validates :match_number, presence: true
 
+  def name_or_username
+    if !name.blank? then name else user.username end
+  end
+
   def properties_for_csv
     game.fields.map do |field|
       if field.field_type == "checkbox_set"
@@ -18,6 +22,6 @@ class ScoringEntry < ActiveRecord::Base
       else
         properties[field.name]
       end
-    end.flatten.unshift match_number, team_number
+    end.flatten.unshift name_or_username, match_number, team_number
   end
 end
