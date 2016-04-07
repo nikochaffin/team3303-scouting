@@ -52,6 +52,7 @@ textarea {
   &.radio_set {
     position: relative;
 
+    // Hide the input
     input {
       position: absolute;
       left: -9999px;
@@ -60,6 +61,7 @@ textarea {
     input + label {
       @include no-select();
       cursor: pointer;
+      display: block;
       font-size: 1.25em;
       padding: 0.35em 0 0.35em 1.75em;
       line-height: 1.25;
