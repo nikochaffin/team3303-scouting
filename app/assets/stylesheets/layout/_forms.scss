@@ -64,7 +64,6 @@ textarea {
       padding: 0.35em 0 0.35em 1.75em;
       line-height: 1.25;
       position: relative;
-      user-select: none;
 
       &:before {
         @include material-icon();
@@ -81,7 +80,8 @@ textarea {
     }
   }
 
-  &.checkbox_set {
+  &.checkbox_set,
+  &.checkbox {
     input + label:before {
       content: "\E835";
     }
