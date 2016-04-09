@@ -33,4 +33,8 @@ class Game < ActiveRecord::Base
       end
     end
   end
+
+  def team_numbers
+    @entries = ScoringEntry.where(game_id: id).select(:team_number).map { |entry| entry.team_number }.uniq
+  end
 end
