@@ -18,7 +18,7 @@ class Game < ActiveRecord::Base
   def fields_for_csv
     fields.map do |field|
       if field.field_type == "checkbox_set"
-        field.options.map { |option| field.name.humanize + " / " + option }
+        field.options
       else
         field.name.humanize
       end
