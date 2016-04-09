@@ -29,8 +29,9 @@ class ScoringEntry < ActiveRecord::Base
       #     end
       #   end
       # else
-        properties[field.name]
-      end
+      #   properties[field.name]
+      # end
+      properties[field.name]
     end.flatten.unshift name_or_username, match_number, team_number
   end
 end
