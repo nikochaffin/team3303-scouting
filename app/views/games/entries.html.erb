@@ -11,7 +11,7 @@
       <th></th>
     </tr>
   </thead>
-  <% @game.entries.each do |entry| %>
+  <% @entries.each do |entry| %>
     <tr>
       <% entry.properties_for_csv.each do |prop| %>
         <td><%= prop %></td>

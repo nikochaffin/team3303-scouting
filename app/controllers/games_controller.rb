@@ -45,6 +45,7 @@ class GamesController < ApplicationController
 
   def entries
     @game = Game.find(params[:id])
+    @entries = ScoringEntry.where(game_id: @game.id).order(:match_number)
     respond_to do |format|
       format.html { render layout: 'results_table' }
       format.csv { send_data @game.entries_to_csv }
