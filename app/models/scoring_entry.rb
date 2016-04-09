@@ -5,8 +5,17 @@ class ScoringEntry < ActiveRecord::Base
   validates :team_number, presence: true
   validates :match_number, presence: true
 
+  def name_property
+    properties.keys.each do |key|
+      if key.include? 'name'
+        if !properties[key].empty? then return properties[key] end
+      end
+    end
+    nil
+  end
+
   def name_or_username
-    if !name.blank? then name else user.username end
+    name || name_property || self.user.username
   end
 
   def properties_for_csv
