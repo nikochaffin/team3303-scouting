@@ -1,6 +1,7 @@
 <h1>All Scoring Entries for <%= @game.name %></h1>
 <p>
-  <%= link_to "Download as CSV file", entries_game_path(@game, format: "csv") %>
+  <%= link_to "Download as CSV file", entries_game_path(@game, format: "csv") %> |
+  <%= link_to "Delete ALL scoring entries", delete_entries_game_path(@game), method: "delete", data: { confirm: "Are you sure that you want to delete ALL scoring entries for this game?" } %>
 </p>
 <table>
   <thead>

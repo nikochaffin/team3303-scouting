@@ -22,9 +22,9 @@
             <%= link_to "Admin", "#", class: "dropdown-toggle" %>
             <ul class="dropdown-menu">
               <li><%= link_to "Games", games_path %></li>
-              <li><%= link_to "Scouting Results", "#" %></li>
-              <li><%= link_to "Cross Tab", "#" %></li>
-              <li><%= link_to "Scoring Entries", "#" %></li>
+              <li><%= link_to "Scouting Results", entries_game_path(current_game) %></li>
+              <!-- <li><%= link_to "Cross Tab", "#" %></li>
+              <li><%= link_to "Scoring Entries", "#" %></li> -->
             </ul>
         <% end %>
         <% if current_game %>

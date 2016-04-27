@@ -16,7 +16,7 @@ class ScoringEntriesController < ApplicationController
     @scoring_entry = ScoringEntry.create(scoring_entry_params)
     if @scoring_entry.save
       flash[:success] = "Scoring entry created"
-      redirect_to root_path
+      redirect_to new_scoring_entry_path
     else
       render :new
     end

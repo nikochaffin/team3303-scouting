@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :games do
     member do
       get :entries
+      delete :delete_entries
     end
   end
   resources :scoring_entries

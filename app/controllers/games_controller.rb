@@ -52,6 +52,13 @@ class GamesController < ApplicationController
     end
   end
 
+  def delete_entries
+    @game = Game.find(params[:id])
+    @game.entries.destroy_all
+    flash[:success] = "All entries deleted"
+    redirect_to entries_game_path(@game)
+  end
+
   private
 
     def game_params
