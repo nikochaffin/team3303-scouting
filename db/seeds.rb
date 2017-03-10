@@ -7,16 +7,21 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 usernames = [
+  "peter",
+  "josh",
+  "nick",
+  "anthony",
+  "kayley",
+  "kelton",
+  "madsen",
+  "john",
+  "grady",
   "jonah",
   "zeke",
   "mark",
-  "adrian",
   "ben",
-  "caleb",
   "abigail",
-  "adam",
-  "bret",
-  "3303scout"
+  "gregfiske"
 ]
 admin_users = [
   {
@@ -28,6 +33,11 @@ admin_users = [
     username: "morgan",
     password: "password",
     password_confirmation: "password"
+  },
+  {
+    username: "caleb",
+    password: "securepassword",
+    password_confirmation: "securepassword"
   },
   {
     username: "mitch",
