@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :admin_user
+  before_action :admin_user, :except => [:entries]
 
   def index
     @games = Game.all
@@ -49,6 +49,7 @@ class GamesController < ApplicationController
     respond_to do |format|
       format.html { render layout: 'results_table' }
       format.csv { send_data @game.entries_to_csv }
+      format.json { render json: @entries }
     end
   end
 

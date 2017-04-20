@@ -21,7 +21,8 @@ usernames = [
   "mark",
   "ben",
   "abigail",
-  "gregfiske"
+  "nanette",
+  "gregfiske",
 ]
 admin_users = [
   {
