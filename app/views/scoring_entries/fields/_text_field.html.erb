@@ -1,2 +1,2 @@
-<%= f.label field.name %>
-<%= f.text_field field.name %>
+<%= f.label field.name.parameterize, field.name %>
+<input type="text" id="scoring_entry_properties_<%= field.name.parameterize %>" name="scoring_entry[properties][<%= field.name %>]">

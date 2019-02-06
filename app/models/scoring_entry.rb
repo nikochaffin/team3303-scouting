@@ -8,7 +8,8 @@ class ScoringEntry < ActiveRecord::Base
   def name_property
     properties.keys.each do |key|
       if key.include? 'name'
-        if !properties[key].empty? then return properties[key] end
+        if !properties[key].empty? then
+          return properties[key] end
       end
     end
     nil
@@ -19,7 +20,10 @@ class ScoringEntry < ActiveRecord::Base
   end
 
   def properties_for_csv
+    print("properties_for_csv", id)
+    print("\n\n", properties, "\n\n")
     game.fields.map do |field|
+      print(field.name)
       if field.field_type == "checkbox_set"
         field.options.map do |option|
           if !properties[field.name].nil?

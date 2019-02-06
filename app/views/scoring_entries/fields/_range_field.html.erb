@@ -1,2 +1,2 @@
-<%= f.label field.name %>
-<%= f.range_field field.name, min: field.range_min, max: field.range_max %>
+<%= f.label field.name.parameterize, field.name %>
+<input type="range" id="scoring_entry_properties_<%= field.name.parameterize %>" name="scoring_entry[properties][<%= field.name %>]" min="<%= field.range_min %>" max="<%= field.range_max %>">

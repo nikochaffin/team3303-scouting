@@ -1,9 +1,10 @@
-<%= f.label field.name %>
+<%= f.label field.name.parameterize, field.name %>
 <div class="input-group">
   <span class="input-group__btn">
     <button class="number-decrease" type="button"><i class="material-icons">&#xE15B;</i></button>
   </span>
-  <%= f.number_field field.name, placeholder: "0", min: 0, value: (@scoring_entry.properties[field.name] || 0) %>
+  <!-- <%= f.number_field field.name, placeholder: "0", min: 0, value: (@scoring_entry.properties[field.name] || 0) %> -->
+  <input id="<%= field.name.parameterize %>" type="number" name="scoring_entry[properties][<%= field.name %>]" placeholder="0" min="0" value="<%= @scoring_entry.properties[field.name] || 0 %>">
   <span class="input-group__btn">
     <button class="number-increase" type="button"><i class="material-icons">&#xE145;</i></button>
   </span>
