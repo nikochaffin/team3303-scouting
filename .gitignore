@@ -22,3 +22,6 @@
 # Ignore local environment variables
 .env
 logfile
+
+# Ignore seeds files for local development
+db/seeds.rb

@@ -1,5 +1,5 @@
-<%= f.label field.name %>
+<%= f.label field.name, field.name %>
 <% field.options.each do |option| %>
-  <%= f.radio_button field.name, option %>
-  <%= f.label field.name + "_" + option.parameterize, option.humanize %>
+  <input id="scoring_entry_properties_<%= field.name.parameterize + "_" + option.parameterize %>" type="radio" name="scoring_entry[properties][<%= field.name %>]" value="<%= option %>">
+  <%= f.label field.name.parameterize + "_" + option.parameterize, option.humanize %>
 <% end %>
